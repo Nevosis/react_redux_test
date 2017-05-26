@@ -18,7 +18,7 @@ export function getProducts() {
 	store.dispatch(requestProducts());
 	setTimeout(() => {
 		store.dispatch(getProductsSuccess(clonedArray));
-	}, 1000);
+	}, 750);
 }
 
 export function addProduct(name) {
@@ -31,5 +31,5 @@ export function addProduct(name) {
 	var clonedArray = JSON.parse(JSON.stringify(productList));
 	setTimeout(() => {
 		store.dispatch(addProductSuccess(clonedArray));
-	}, 1000);
+	}, 750);
 }
