@@ -6,6 +6,7 @@ import * as productApi from '../../api/productApi';
 class ProductListContainer extends Component {
 
   componentDidMount() {
+    if (!this.props.products.length)
       productApi.getProducts();
   }
 
