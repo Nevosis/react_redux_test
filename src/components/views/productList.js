@@ -1,20 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 
-// Using "Stateless Functional Components"
-export default function(props) {
-  if (props.isFetching) return <div>Loading...</div>;
-  else
-    return (
-      <div className="data-list">
+class ProductList extends Component {
+  render() {
+    if (this.props.isFetching) return <div>Loading...</div>;
+    else
+      return (
+        <div className="data-list">
 
-        {props.products.map(product => {
-          return (
-            <div key={product.id} className="data-list-item">
-              {product.name}
-            </div>
-          );
-        })}
+          {this.props.products.map(product => {
+            return (
+              <div key={product.id} className="data-list-item">
+                {product.name}
+              </div>
+            );
+          })}
 
-      </div>
-    );
+        </div>
+      );
+  }
 }
+
+export default ProductList;
