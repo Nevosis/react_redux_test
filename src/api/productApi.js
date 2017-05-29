@@ -13,7 +13,7 @@ import {
 var productList = [{ id: 0, name: "haha" }, { id: 1, name: "johnny deep" }];
 
 export function getProducts() {
-	var clonedArray = JSON.parse(JSON.stringify(productList));
+	var clonedArray = [...productList];
 
 	console.log("[productApi.getProducts] START");
 
@@ -33,7 +33,7 @@ export function addProduct(name) {
 		id: productList[productList.length - 1].id + 1,
 		name: name
 	});
-	var clonedArray = JSON.parse(JSON.stringify(productList));
+	var clonedArray = [...productList];
 	setTimeout(() => {
 		console.log("[productApi.addProduct] END, productList ", productList);
 		store.dispatch(addProductSuccess(clonedArray));
