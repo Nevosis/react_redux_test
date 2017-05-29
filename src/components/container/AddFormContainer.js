@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
-
-import * as productApi from "../../api/productApi";
+import productApi from "../../api/productApi";
 import AddForm from "../views/addForm";
 
 class AddFormContainer extends Component {

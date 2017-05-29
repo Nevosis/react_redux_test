@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import ProductList from '../views/productList';
-import * as productApi from '../../api/productApi';
-import PropTypes from "prop-types";
+import productApi from '../../api/productApi';
 
 class ProductListContainer extends Component {
 
