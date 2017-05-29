@@ -8,7 +8,7 @@ import "../../tmp.css"
 export default function(props) {
   return (
     <div className="addProductList">
-      <AddFormContainer searchType={props.searchType}/>
+      <AddFormContainer />
       <ProductListContainer />
     </div>
   );

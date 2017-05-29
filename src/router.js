@@ -13,7 +13,7 @@ export default (
 		<Menu />
 		<Switch>
 			<Route exact path="/" component={Home} />
-			<Route path="/products" searchType="products" component={AddProductListLayout} />
+			<Route path="/products" component={AddProductListLayout} />
 
 
 		</Switch>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 import * as productApi from "../../api/productApi";
 import AddForm from "../views/addForm";
@@ -29,6 +30,10 @@ const mapStateToProps = function(store) {
   return {
     isAdding: store.productsState.isAdding
   };
+};
+
+AddFormContainer.propTypes = {
+  isAdding: PropTypes.bool.isRequired
 };
 
 export default connect(mapStateToProps)(AddFormContainer);

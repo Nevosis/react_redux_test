@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
 // Using "Stateless Functional Components"
 class AddForm extends Component {
@@ -33,5 +34,10 @@ handleUpdate(e) {
     );
   }
 }
+
+AddForm.propTypes = {
+  isAdding: PropTypes.bool,
+  add: PropTypes.func.isRequired
+};
 
 export default AddForm;
