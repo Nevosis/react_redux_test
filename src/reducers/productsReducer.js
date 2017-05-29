@@ -17,6 +17,10 @@ const productReducer = function(state = initialState, action) {
       return { ...state, isAdding: true };
     case types.ADD_PRODUCT_SUCCESS:
       return { ...state, isAdding: false, products: action.products };
+    case types.REQUEST_REMOVE_PRODUCT:
+      return { ...state};
+    case types.REMOVE_PRODUCT_SUCCESS:
+      return { ...state, products: action.products };
     default:
       return state;
   }

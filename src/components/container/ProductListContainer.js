@@ -4,15 +4,22 @@ import ProductList from '../views/productList';
 import productApi from '../../api/productApi';
 
 class ProductListContainer extends Component {
+  constructor(props) {
+    super(props);
 
+    this.removeProduct = this.removeProduct.bind(this);
+
+  }
   componentDidMount() {
     if (!this.props.products.length)
       productApi.getProducts();
   }
-
+  removeProduct(productId) {
+    productApi.removeProduct(productId);
+  }
   render() {
     return (
-        <ProductList products={this.props.products} isFetching={this.props.isFetching} />    
+        <ProductList products={this.props.products} isFetching={this.props.isFetching} removeProduct={this.removeProduct}/>    
     )
   }
 }

@@ -25,3 +25,16 @@ export const getProductsSuccess = products => {
     products
   };
 };
+
+export const requestRemoveProduct = () => {
+  return {
+    type: types.REQUEST_REMOVE_PRODUCT
+  };
+};
+
+export const removeProductSuccess = products => {
+  return {
+    type: types.REMOVE_PRODUCT_SUCCESS,
+    products
+  };
+};

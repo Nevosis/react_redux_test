@@ -12,6 +12,7 @@ class ProductList extends Component {
             return (
               <div key={product.id} className="data-list-item">
                 {product.name}
+                  <button onClick={this.props.removeProduct.bind(null, product.id)}>X</button>
               </div>
             );
           })}
@@ -22,7 +23,8 @@ class ProductList extends Component {
 }
 
 ProductList.propTypes = {
-  isFetching: PropTypes.bool.isRequired
+  isFetching: PropTypes.bool.isRequired,
+  removeProduct: PropTypes.func.isRequired
 };
 
 export default ProductList;
