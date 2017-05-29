@@ -8,3 +8,5 @@ Guide:<br />
 [css-tricks](https://github.com/bradwestfall/CSS-Tricks-React-Series)<br />
 [redux examples](https://github.com/reactjs/redux/tree/master/examples)
 
+[DEVTOOLS](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) for redux. Show the store evolution over time and store-changing.
+
