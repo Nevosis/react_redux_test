@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Table, Button } from "react-bootstrap";
 
 class ProductList extends Component {
   render() {
@@ -7,15 +8,38 @@ class ProductList extends Component {
     else
       return (
         <div className="data-list">
+          <Table striped bordered  hover>
+            <thead>
+              <tr>
+                <th className="col-xs-11">Product</th>
+                <th className="col-xs-1">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
 
-          {this.props.products.map(product => {
-            return (
-              <div key={product.id} className="data-list-item">
-                {product.name}
-                  <button onClick={this.props.removeProduct.bind(null, product.id)}>X</button>
-              </div>
-            );
-          })}
+              {this.props.products.map(product => {
+                return (
+                  <tr key={product.id}>
+                    <td >{product.name}</td>
+                    <td>
+                      <Button
+                        bsStyle="danger"
+                        bsSize="small"
+                        block
+                        onClick={this.props.removeProduct.bind(
+                          null,
+                          product.id
+                        )}
+                      >
+                        X
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+
+          </Table>
 
         </div>
       );

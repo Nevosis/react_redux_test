@@ -1,5 +1,4 @@
 import * as types from "../actions/actionTypes";
-// import _ from 'lodash';
 
 const initialState = {
   products: [],

@@ -1,18 +1,26 @@
 import React from "react";
-import {NavLink} from 'react-router-dom'
-import "../../tmp.css"
-
+import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import "../../tmp.css";
 
 // Using "Stateless Functional Components"
 export default function(props) {
   return (
-    <div className="app">
-      <div className="primary-aside">
-        <ul>
-          <li><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
-          <li><NavLink to="/products" activeClassName="active">Products</NavLink></li>
-        </ul>
-      </div>
-    </div>
+    <Navbar>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <LinkContainer exact to="/" activeClassName="active">
+            <a>React-Redux-Bootstrap</a>
+          </LinkContainer>
+        </Navbar.Brand>
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav>
+          <LinkContainer to="/products" activeClassName="active">
+            <NavItem eventKey={1} href="#">Products</NavItem>
+          </LinkContainer>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }

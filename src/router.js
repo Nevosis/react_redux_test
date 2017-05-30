@@ -11,11 +11,12 @@ import Home from "./components/home";
 export default (
 	<div>
 		<Menu />
-		<Switch>
-			<Route exact path="/" component={Home} />
-			<Route path="/products" component={AddProductListLayout} />
+		<div className="app">
+			<Switch>
 
-
-		</Switch>
+				<Route exact path="/" component={Home} />
+				<Route path="/products" component={AddProductListLayout} />
+			</Switch>
+		</div>
 	</div>
 );
