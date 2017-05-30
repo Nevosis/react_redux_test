@@ -15,9 +15,11 @@ class AddFormContainer extends Component {
     event.preventDefault();
 
     let query = this.refs.child.getQuery();
-    this.refs.child.blankInput();
-    
-    productApi.addProduct(query);
+    if (query) {
+      this.refs.child.blankInput();
+      
+      productApi.addProduct(query);
+    }
   }
 
   render() {

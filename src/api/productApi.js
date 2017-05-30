@@ -12,6 +12,8 @@ import {
  * Get all products
  */
 
+const TIMEOUT = 150;
+
 var productList = [{ id: 0, name: "haha" }, { id: 1, name: "johnny deep" }];
 
 var productApi = {
@@ -24,7 +26,7 @@ var productApi = {
 		setTimeout(() => {
 			console.log(`[productApi.getProducts] END, dispatch `, clonedArray);
 			store.dispatch(getProductsSuccess(clonedArray));
-		}, 750);
+		}, TIMEOUT);
 	},
 
 	removeProduct(productId) {
@@ -33,13 +35,11 @@ var productApi = {
 		store.dispatch(requestRemoveProduct());
 
 		//REMOVE OBJECT BY FINDING ID
-		productList.splice(
-			productList.findIndex(product => {
-				if (product.id === productId) return true;
-				return false;
-			}),
-			1
-		);
+		var productIndex = productList.findIndex(product => {
+			if (product.id === productId) return true;
+			return false;
+		});
+		if (productIndex >= 0) productList.splice(productIndex, 1);
 
 		var clonedArray = [...productList];
 
@@ -47,7 +47,7 @@ var productApi = {
 			console.log(`[productApi.getProducts] END, dispatch `, clonedArray);
 
 			store.dispatch(removeProductSuccess(clonedArray));
-		}, 750);
+		}, TIMEOUT);
 	},
 
 	addProduct(name) {
@@ -71,7 +71,7 @@ var productApi = {
 				productList
 			);
 			store.dispatch(addProductSuccess(clonedArray));
-		}, 750);
+		}, TIMEOUT);
 	}
 };
 
