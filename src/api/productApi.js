@@ -28,19 +28,20 @@ var productApi = {
 	},
 
 	removeProduct(productId) {
-
 		console.log("[productApi.removeProduct] START, ", productId);
 
 		store.dispatch(requestRemoveProduct());
 
 		//REMOVE OBJECT BY FINDING ID
-		productList.splice(productList.findIndex(product => {
-			if (product.id === productId)
-				return true;
-			return false;
-		}), 1);
+		productList.splice(
+			productList.findIndex(product => {
+				if (product.id === productId) return true;
+				return false;
+			}),
+			1
+		);
 
-		var clonedArray = [...productList]
+		var clonedArray = [...productList];
 
 		setTimeout(() => {
 			console.log(`[productApi.getProducts] END, dispatch `, clonedArray);
@@ -53,10 +54,16 @@ var productApi = {
 		store.dispatch(requestAddProduct());
 		console.log("[productApi.addProduct] START, name %s", name);
 
-		productList.push({
-			id: productList[productList.length - 1].id + 1,
-			name: name
-		});
+		if (productList.length)
+			productList.push({
+				id: productList[productList.length - 1].id + 1,
+				name: name
+			});
+		else
+			productList.push({
+				id: 0,
+				name: name
+			});
 		var clonedArray = [...productList];
 		setTimeout(() => {
 			console.log(

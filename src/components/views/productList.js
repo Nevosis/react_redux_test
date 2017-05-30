@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Table, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class ProductList extends Component {
   render() {
@@ -8,7 +9,7 @@ class ProductList extends Component {
     else
       return (
         <div className="data-list">
-          <Table striped bordered  hover>
+          <Table striped bordered hover>
             <thead>
               <tr>
                 <th className="col-xs-11">Product</th>
@@ -20,7 +21,11 @@ class ProductList extends Component {
               {this.props.products.map(product => {
                 return (
                   <tr key={product.id}>
-                    <td >{product.name}</td>
+                    <td>
+                      <Link to={`/products/${product.id}`}>
+                        {product.name}
+                      </Link>
+                    </td>
                     <td>
                       <Button
                         bsStyle="danger"

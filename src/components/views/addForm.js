@@ -13,7 +13,6 @@ class AddForm extends Component {
     this.setState({ inputValue: e.target.value });
   }
   getQuery() {
-    console.log("aa");
     return this.refs.add.props.value;
   }
 
@@ -32,7 +31,7 @@ class AddForm extends Component {
         </FormGroup>
 
         <Button disabled={isAdding || !inputValue.length} onClick={this.props.add}>
-          Send invitation
+          Add Product
         </Button>
       </Form>
     );
