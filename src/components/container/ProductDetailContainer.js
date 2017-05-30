@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ProductDetail from "../views/ProductDetail";
-import productApi from '../../api/productApi';
+import productApi from "../../api/productApi";
 
-  
 class ProductDetailContainer extends Component {
-
   componentDidMount() {
-    if (!this.props.products.length)
-      productApi.getProducts();
+    if (!this.props.products.length) productApi.getProducts();
   }
   render() {
-    let productId = Number.parseInt(this.props.match.params.productId,10);
-    const product = this.props.products.find((product) => {
-      return product.id === productId
+    let productId = Number.parseInt(this.props.match.params.productId, 10);
+    const product = this.props.products.find(product => {
+      return product.id === productId;
     });
-    return <ProductDetail product={product} isFetching={this.props.isFetching} />;
+    if (product)
+      return (
+        <ProductDetail product={product} isFetching={this.props.isFetching} />
+      );
+    else
+      return <ProductDetail product={{id:-1}} isFetching={this.props.isFetching} />;
   }
 }
 

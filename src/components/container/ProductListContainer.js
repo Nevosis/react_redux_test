@@ -8,6 +8,7 @@ class ProductListContainer extends Component {
     super(props);
 
     this.removeProduct = this.removeProduct.bind(this);
+
   }
   componentDidMount() {
     if (!this.props.products.length)

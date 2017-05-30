@@ -7,7 +7,7 @@ class ProductDetail extends Component {
 		let isFetching = this.props.isFetching;
 
 		if (isFetching) return <div>Loading...</div>;
-		else if (product)
+		else if (product.id >= 0)
 			return (
 				<div>
 					name : {product.name}
@@ -18,7 +18,11 @@ class ProductDetail extends Component {
 }
 
 ProductDetail.propTypes = {
-	isFetching: PropTypes.bool.isRequired
+	isFetching: PropTypes.bool.isRequired,
+	product: PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		name: PropTypes.string
+	})
 };
 
 export default ProductDetail;
