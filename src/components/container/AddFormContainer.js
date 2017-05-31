@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import productApi from "../../api/productApi";
 import AddForm from "../views/addForm";
@@ -8,22 +8,40 @@ class AddFormContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.add = this.add.bind(this);
-
+    this.addProduct = this.addProduct.bind(this);
+    this.addNothing = this.addNothing.bind(this);
   }
-  add(event) {
+  addProduct(event, val) {
     event.preventDefault();
 
-    let query = this.refs.child.getQuery();
-    if (query) {
-      this.refs.child.blankInput();
-      
-      productApi.addProduct(query);
+    if (val) {
+      productApi.addProduct(val);
+      return true;
     }
+    return false;
+  }
+  addNothing(event, val) {
+    event.preventDefault();
+    console.log("ADD NOTHING ---- Test abstract addform");
   }
 
   render() {
-    return <AddForm add={this.add} ref="child" isAdding={this.props.isAdding} />;
+    return (
+      <div>
+        <AddForm
+          add={this.addProduct}
+          isAdding={this.props.isAdding}
+          type="product"
+        />
+        
+        <AddForm
+          add={this.addNothing}
+          isAdding={this.props.isAdding}
+          type="nothing"
+        />
+        
+      </div>
+    );
   }
 }
 
