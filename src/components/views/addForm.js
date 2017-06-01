@@ -22,7 +22,7 @@ class AddForm extends Component {
     const inputValue = this.state.inputValue;
 
     return (
-      <Form inline onSubmit={e => this.handleAdd(e, inputValue)}>
+      <Form style={AddFormStyle} inline onSubmit={e => this.handleAdd(e, inputValue)}>
         <FormGroup controlId="formInlineName">
           <FormControl
             type="text"
@@ -42,6 +42,10 @@ class AddForm extends Component {
       </Form>
     );
   }
+}
+
+const AddFormStyle = {
+  marginBottom: 10
 }
 
 AddForm.propTypes = {

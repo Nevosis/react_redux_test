@@ -28,22 +28,25 @@ class AddFormContainer extends Component {
   render() {
     return (
       <div>
-        <AddForm
-          add={this.addProduct}
-          isAdding={this.props.isAdding}
-          type="product"
-        />
-        
+        <div>
+          <AddForm
+            add={this.addProduct}
+            isAdding={this.props.isAdding}
+            type="product"
+          />
+        </div>
         <AddForm
           add={this.addNothing}
           isAdding={this.props.isAdding}
           type="nothing"
         />
-        
+
       </div>
     );
   }
 }
+
+
 
 const mapStateToProps = function(store) {
   return {

@@ -9,15 +9,26 @@ import AddProductListLayout from "./components/layouts/addProductListLayout";
 import Home from "./components/home";
 import Product from "./components/container/ProductDetailContainer";
 
+const appStyle = {
+	marginTop: 50,
+	marginBottom: 50,
+	marginLeft: 50,
+	marginRight: 50
+};
+
 export default (
 	<div>
 		<Menu />
-		<div className="app">
+		<div style={appStyle}>
 			<Switch>
 
 				<Route exact path="/" component={Home} />
-				<Route exact path="/products" component={AddProductListLayout} />
-				<Route path={"/products/:productId"} component={Product}/>
+				<Route
+					exact
+					path="/products"
+					component={AddProductListLayout}
+				/>
+				<Route path={"/products/:productId"} component={Product} />
 			</Switch>
 		</div>
 	</div>
