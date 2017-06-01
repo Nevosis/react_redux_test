@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Row, Col } from "react-bootstrap";
 import PropTypes from "prop-types";
 import productApi from "../../api/productApi";
 import AddForm from "../views/addForm";
@@ -27,26 +28,26 @@ class AddFormContainer extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <Row>
+        <Col md={3}>
           <AddForm
             add={this.addProduct}
             isAdding={this.props.isAdding}
             type="product"
           />
-        </div>
-        <AddForm
-          add={this.addNothing}
-          isAdding={this.props.isAdding}
-          type="nothing"
-        />
+        </Col>
+        <Col md={3}>
+          <AddForm
+            add={this.addNothing}
+            isAdding={this.props.isAdding}
+            type="nothing"
+          />
+        </Col>
 
-      </div>
+      </Row>
     );
   }
 }
-
-
 
 const mapStateToProps = function(store) {
   return {

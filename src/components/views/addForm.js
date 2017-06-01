@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Form, FormGroup, FormControl, Button } from "react-bootstrap";
 
+const AddFormStyle = {
+  marginBottom: 10
+}
+
 class AddForm extends Component {
   constructor(props) {
     super(props);
@@ -44,9 +48,6 @@ class AddForm extends Component {
   }
 }
 
-const AddFormStyle = {
-  marginBottom: 10
-}
 
 AddForm.propTypes = {
   isAdding: PropTypes.bool,

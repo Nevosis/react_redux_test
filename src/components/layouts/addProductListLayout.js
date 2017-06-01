@@ -3,12 +3,6 @@ import ProductListContainer from "../container/ProductListContainer";
 import AddFormContainer from "../container/AddFormContainer";
 import "../../tmp.css";
 
-
-var addProductListFormStyle = {
-	marginBottom: 10
-}
-
-
 // Using "Stateless Functional Components"
 export default function(props) {
 	return (

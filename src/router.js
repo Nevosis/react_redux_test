@@ -21,7 +21,6 @@ export default (
 		<Menu />
 		<div style={appStyle}>
 			<Switch>
-
 				<Route exact path="/" component={Home} />
 				<Route
 					exact
