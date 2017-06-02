@@ -5,6 +5,30 @@ import { Link } from "react-router-dom";
 
 class ProductList extends Component {
   render() {
+    const isRemoving = this.props.isRemoving;
+    console.log(isRemoving);
+    function renderLine(product, removeProduct) {
+      return (
+        <tr key={product.id}>
+          <td>
+            <Link to={`/products/${product.id}`}>
+              {product.name}
+            </Link>
+          </td>
+          <td>
+            <Button
+              bsStyle="danger"
+              bsSize="small"
+              block
+              onClick={removeProduct.bind(null, product.id)}
+              disabled={isRemoving}
+            >
+              X
+            </Button>
+          </td>
+        </tr>
+      );
+    }
     if (this.props.isFetching) return <div>Loading...</div>;
     else {
       // Slice is to leave props.products immutable => could use redux, send sort action, and change products.
@@ -24,28 +48,7 @@ class ProductList extends Component {
             <tbody>
 
               {sortedProducts.map(product => {
-                return (
-                  <tr key={product.id}>
-                    <td>
-                      <Link to={`/products/${product.id}`}>
-                        {product.name}
-                      </Link>
-                    </td>
-                    <td>
-                      <Button
-                        bsStyle="danger"
-                        bsSize="small"
-                        block
-                        onClick={this.props.removeProduct.bind(
-                          null,
-                          product.id
-                        )}
-                      >
-                        X
-                      </Button>
-                    </td>
-                  </tr>
-                );
+                return renderLine(product, this.props.removeProduct);
               })}
             </tbody>
 

@@ -19,7 +19,7 @@ class ProductListContainer extends Component {
   }
   render() {
     return (
-        <ProductList products={this.props.products} isFetching={this.props.isFetching} removeProduct={this.removeProduct}/>    
+        <ProductList products={this.props.products} isFetching={this.props.isFetching} isRemoving={this.props.isRemoving} removeProduct={this.removeProduct}/>    
     )
   }
 }
@@ -27,6 +27,7 @@ class ProductListContainer extends Component {
 const mapStateToProps = function(store) {
   return {
     isFetching: store.productsState.isFetching,
+    isRemoving: store.productsState.isRemoving,
     products: store.productsState.products
   };
 };
