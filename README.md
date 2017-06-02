@@ -1,5 +1,12 @@
-# react_redux_test
+# react_redux_test - EVERYPONY
 Getting use to react and redux
+
+Main ideas/element :
+* React-Redux
+* CssInJs - No more .css files
+* layout > container > views
+* Fluttershy is the best pony ever
+
 
 Upgrading my first [react app](https://github.com/Nevosis/react_test) with Redux
 
