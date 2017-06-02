@@ -7,10 +7,11 @@ class ProductList extends Component {
   render() {
     if (this.props.isFetching) return <div>Loading...</div>;
     else {
+      // Slice is to leave props.products immutable => could use redux, send sort action, and change products.
       const sortedProducts = this.props.products
         .slice()
         .sort((a, b) => (a.name > b.name ? 1 : -1));
-        
+
       return (
         <div className="data-list">
           <Table striped bordered hover>
