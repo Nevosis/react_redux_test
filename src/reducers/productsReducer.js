@@ -6,7 +6,7 @@ const initialState = {
   isAdding: false
 };
 
-const productReducer = function(state = initialState, action) {
+const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_PRODUCTS_SUCCESS:
       return { ...state, isFetching: false, products: action.products };
