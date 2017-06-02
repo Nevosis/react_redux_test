@@ -7,6 +7,7 @@ Main ideas/element :
 * layout > container > views
 * Api is the "middleware", I still don't get the point of a "real middleware"
 * SetState is good in a container/view in case it only touch to its state/view and has no impact on the rest of the application
+* Checking for PropTypes is mandatory !
 * **Fluttershy is the best pony **E-V-E-R****
 
 

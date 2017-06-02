@@ -8,10 +8,6 @@ import {
 	removeProductSuccess
 } from "../actions/productsActions";
 
-/**
- * Get all products
- */
-
 const TIMEOUT = 150;
 
 var productList = [{ id: 0, name: "haha" }, { id: 1, name: "johnny deep" }];
