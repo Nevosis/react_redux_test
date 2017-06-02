@@ -1,6 +1,8 @@
 # react_redux_test - EVERYPONY
 Getting use to react and redux
 
+Upgrading my first [react app](https://github.com/Nevosis/react_test) with Redux
+
 Main ideas/element :
 * React-Redux
 * CssInJs - No more .css files
@@ -11,7 +13,6 @@ Main ideas/element :
 * **Fluttershy is the best pony **E-V-E-R****
 
 
-Upgrading my first [react app](https://github.com/Nevosis/react_test) with Redux
 
 Guide:<br />
 [redux website](http://redux.js.org/docs/introduction/)<br />
