@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import style from "../../globalStyle";
 
 // Using "Stateless Functional Components"
 export default function(props) {
@@ -9,7 +10,7 @@ export default function(props) {
       <Navbar.Header>
         <Navbar.Brand>
           <LinkContainer exact to="/" activeClassName="active">
-            <a>EveryPony</a>
+            <a ><p style={{...style.rainbow, fontWeight:"bold"}}>EveryPony</p></a>
           </LinkContainer>
         </Navbar.Brand>
       </Navbar.Header>

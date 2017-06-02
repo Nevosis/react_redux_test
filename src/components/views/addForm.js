@@ -9,7 +9,6 @@ const AddFormStyle = {
 class AddForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = { inputValue: "" };
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
