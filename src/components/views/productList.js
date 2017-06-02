@@ -6,7 +6,11 @@ import { Link } from "react-router-dom";
 class ProductList extends Component {
   render() {
     if (this.props.isFetching) return <div>Loading...</div>;
-    else
+    else {
+      const sortedProducts = this.props.products
+        .slice()
+        .sort((a, b) => (a.name > b.name ? 1 : -1));
+        
       return (
         <div className="data-list">
           <Table striped bordered hover>
@@ -18,7 +22,7 @@ class ProductList extends Component {
             </thead>
             <tbody>
 
-              {this.props.products.map(product => {
+              {sortedProducts.map(product => {
                 return (
                   <tr key={product.id}>
                     <td>
@@ -48,6 +52,7 @@ class ProductList extends Component {
 
         </div>
       );
+    }
   }
 }
 
