@@ -7,7 +7,7 @@ Main ideas/element :
 * layout > container > views
 * Api is the "middleware", I still don't get the point of a "real middleware"
 * SetState is good in a container/view in case it only touch to its state/view and has no impact on the rest of the application
-* **Fluttershy is the best pony **ever** **
+* ** Fluttershy is the best pony **ever** **
 
 
 Upgrading my first [react app](https://github.com/Nevosis/react_test) with Redux
