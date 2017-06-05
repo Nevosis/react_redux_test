@@ -15,3 +15,5 @@ CssInJs :
 http://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html
 https://github.com/necolas/react-native-web/blob/master/docs/guides/style.md
 
+
+Il faudrait normaliser les data de redux ? https://github.com/paularmstrong/normalizr
