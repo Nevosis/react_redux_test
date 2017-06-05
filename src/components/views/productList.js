@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 class ProductList extends Component {
   render() {
     const isRemoving = this.props.isRemoving;
-    console.log(isRemoving);
     function renderLine(product, removeProduct) {
       return (
         <tr key={product.id}>
