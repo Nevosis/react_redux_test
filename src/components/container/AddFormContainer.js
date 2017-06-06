@@ -23,7 +23,6 @@ class AddFormContainer extends Component {
   }
   addNothing(event, val) {
     event.preventDefault();
-    console.log("ADD NOTHING ---- Test abstract addform");
   }
 
   render() {

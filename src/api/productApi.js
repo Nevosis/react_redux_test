@@ -1,4 +1,5 @@
 import store from "../store";
+import log from "../utils/log";
 import {
 	getProductsSuccess,
 	requestProducts,
@@ -16,17 +17,17 @@ var productApi = {
 	getProducts() {
 		var clonedArray = [...productList];
 
-		console.log("[productApi.getProducts] START");
+		log.log("[productApi.getProducts] START");
 
 		store.dispatch(requestProducts());
 		setTimeout(() => {
-			console.log(`[productApi.getProducts] END, dispatch `, clonedArray);
 			store.dispatch(getProductsSuccess(clonedArray));
+			log.log(`[productApi.getProducts] END`);
 		}, TIMEOUT);
 	},
 
 	removeProduct(productId) {
-		console.log("[productApi.removeProduct] START, ", productId);
+		log.log("[productApi.removeProduct] START, ", productId);
 
 		store.dispatch(requestRemoveProduct());
 
@@ -40,15 +41,15 @@ var productApi = {
 		var clonedArray = [...productList];
 
 		setTimeout(() => {
-			console.log(`[productApi.getProducts] END, dispatch `, clonedArray);
-
 			store.dispatch(removeProductSuccess(clonedArray));
+			log.log(`[productApi.getProducts] END`);
 		}, TIMEOUT);
 	},
 
 	addProduct(name) {
+		log.log("[productApi.addProduct] START, name %s", name);
+
 		store.dispatch(requestAddProduct());
-		console.log("[productApi.addProduct] START, name %s", name);
 
 		if (productList.length)
 			productList.push({
@@ -62,11 +63,8 @@ var productApi = {
 			});
 		var clonedArray = [...productList];
 		setTimeout(() => {
-			console.log(
-				"[productApi.addProduct] END, productList ",
-				productList
-			);
 			store.dispatch(addProductSuccess(clonedArray));
+			log.log("[productApi.addProduct] END");
 		}, TIMEOUT);
 	}
 };
